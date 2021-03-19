@@ -30,4 +30,10 @@ class TaskAdapter(var tasks: List<Task>) : RecyclerView.Adapter<TaskAdapter.View
             binding.description.text = task.description
         }
     }
+
+    fun setItems(task: List<Task>) {
+        this.tasks = task
+        notifyDataSetChanged()
+    }
+
 }
