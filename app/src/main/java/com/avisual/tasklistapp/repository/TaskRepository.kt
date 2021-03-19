@@ -1,5 +1,6 @@
 package com.avisual.tasklistapp.repository
 
+import androidx.lifecycle.LiveData
 import com.avisual.tasklistapp.database.Db
 import com.avisual.tasklistapp.database.TaskDao
 import com.avisual.tasklistapp.model.Task
@@ -10,7 +11,7 @@ class TaskRepository(database: Db) {
 
     private var photoGalleryDao: TaskDao = database.taskDao()
 
-    suspend fun savePhoto(task: Task) = withContext(Dispatchers.IO) {
+    suspend fun save(task: Task) = withContext(Dispatchers.IO) {
         photoGalleryDao.insert(task)
     }
 
@@ -20,6 +21,14 @@ class TaskRepository(database: Db) {
 
     suspend fun update(task: Task) = withContext(Dispatchers.IO) {
         photoGalleryDao.updateTask(task)
+    }
+
+    fun getAllLiveData() : LiveData<List<Task>> {
+        return photoGalleryDao.getAllLiveData()
+    }
+
+    suspend fun getAll() = withContext(Dispatchers.IO) {
+        photoGalleryDao.getAll()
     }
 
 }
