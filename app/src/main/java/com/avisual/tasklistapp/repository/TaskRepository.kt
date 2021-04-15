@@ -5,6 +5,7 @@ import com.avisual.tasklistapp.database.Db
 import com.avisual.tasklistapp.database.TaskDao
 import com.avisual.tasklistapp.model.Task
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 
 class TaskRepository(database: Db) {
@@ -25,6 +26,10 @@ class TaskRepository(database: Db) {
 
     fun getAllLiveData() : LiveData<List<Task>> {
         return photoGalleryDao.getAllLiveData()
+    }
+
+    fun getAllTasks(): Flow<List<Task>>{
+        return photoGalleryDao.getAllWithFlow()
     }
 
     suspend fun getAll() = withContext(Dispatchers.IO) {
