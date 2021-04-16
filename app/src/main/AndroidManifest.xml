@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tasklistapp">
-        <activity android:name=".ui.RegisterTaskActivity"></activity>
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.registerTask.RegisterTaskActivity"></activity>
+        <activity android:name=".ui.mainActivity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

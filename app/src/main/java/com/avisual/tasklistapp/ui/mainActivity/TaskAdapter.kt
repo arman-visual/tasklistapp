@@ -1,4 +1,4 @@
-package com.avisual.tasklistapp.ui
+package com.avisual.tasklistapp.ui.mainActivity
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

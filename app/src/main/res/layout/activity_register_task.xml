@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="25dp"
-    tools:context=".ui.RegisterTaskActivity">
+    tools:context=".ui.registerTask.RegisterTaskActivity">
 
     <TextView
         android:id="@+id/et_title_form"

@@ -1,4 +1,4 @@
-package com.avisual.tasklistapp.ui
+package com.avisual.tasklistapp.ui.mainActivity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import com.avisual.tasklistapp.database.Db
 import com.avisual.tasklistapp.databinding.ActivityMainBinding
 import com.avisual.tasklistapp.repository.TaskRepository
+import com.avisual.tasklistapp.ui.registerTask.RegisterTaskActivity
 import kotlinx.coroutines.flow.collect
 
 class MainActivity : AppCompatActivity() {

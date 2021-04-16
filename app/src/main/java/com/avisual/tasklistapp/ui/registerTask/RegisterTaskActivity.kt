@@ -1,4 +1,4 @@
-package com.avisual.tasklistapp.ui
+package com.avisual.tasklistapp.ui.registerTask
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

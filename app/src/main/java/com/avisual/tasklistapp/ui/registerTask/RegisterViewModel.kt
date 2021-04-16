@@ -1,4 +1,4 @@
-package com.avisual.tasklistapp.ui
+package com.avisual.tasklistapp.ui.registerTask
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
