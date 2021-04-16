@@ -1,16 +1,15 @@
 package com.avisual.tasklistapp.ui
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
 import com.avisual.tasklistapp.common.ScopeViewModel
 import com.avisual.tasklistapp.model.Task
 import com.avisual.tasklistapp.repository.TaskRepository
+import kotlinx.coroutines.flow.Flow
 
 class MainViewModel(private val taskRepository: TaskRepository) : ScopeViewModel() {
 
-    val storedTask: LiveData<List<Task>> get() = taskRepository.getAllTasks().asLiveData()
+    val storedTask: Flow<List<Task>> get() = taskRepository.getAllTasks()
 
 }
 
