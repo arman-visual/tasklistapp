@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.avisual.tasklistapp.database.Db
 import com.avisual.tasklistapp.databinding.ActivityMainBinding
 import com.avisual.tasklistapp.repository.TaskRepository
+import kotlinx.coroutines.flow.collect
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,10 +21,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         buildDependencies()
         viewModel = buildViewModel()
-        configureRecycler()
-        setFabListener()
+        setUpUi()
         subscribeUi()
     }
 
@@ -36,25 +38,17 @@ class MainActivity : AppCompatActivity() {
         return ViewModelProvider(this, factory).get(MainViewModel::class.java)
     }
 
-    private fun configureRecycler() {
+    private fun setUpUi() {
+        binding.fabAddtask.setOnClickListener {
+            startActivity(Intent(this, RegisterTaskActivity::class.java))
+        }
         taskAdapter = TaskAdapter(emptyList())
         binding.recycler.adapter = taskAdapter
     }
 
-    private fun setFabListener() {
-        binding.fabAddtask.setOnClickListener {
-            startActivity(Intent(this, RegisterTaskActivity::class.java))
-        }
-    }
-
     private fun subscribeUi() {
-        viewModel.storedTask.observe(this, {
-            taskAdapter.setItems(it)
-        })
-    }
-
-    override fun onResume() {
-        viewModel.refresh()
-        super.onResume()
+        lifecycleScope.launchWhenStarted {
+            viewModel.storedTask.collect { taskAdapter.setItems(it) }
+        }
     }
 }
