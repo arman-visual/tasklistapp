@@ -2,13 +2,17 @@ package com.avisual.tasklistapp.ui.mainActivity
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import com.avisual.tasklistapp.R
 import com.avisual.tasklistapp.database.Db
 import com.avisual.tasklistapp.databinding.ActivityMainBinding
+import com.avisual.tasklistapp.model.Task
 import com.avisual.tasklistapp.repository.TaskRepository
 import com.avisual.tasklistapp.ui.registerTask.RegisterTaskActivity
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.collect
 
 class MainActivity : AppCompatActivity() {
@@ -43,8 +47,13 @@ class MainActivity : AppCompatActivity() {
         binding.fabAddtask.setOnClickListener {
             startActivity(Intent(this, RegisterTaskActivity::class.java))
         }
-        taskAdapter = TaskAdapter(emptyList())
+        taskAdapter = TaskAdapter(emptyList(), ::onClickDeleteButton)
         binding.recycler.adapter = taskAdapter
+    }
+
+    private fun onClickDeleteButton(task: Task) {
+        viewModel.deleteTask(task)
+        Toast.makeText(this, "Delete Task ${task.title}", Toast.LENGTH_SHORT).show()
     }
 
     private fun subscribeUi() {
