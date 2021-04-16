@@ -6,11 +6,17 @@ import com.avisual.tasklistapp.common.ScopeViewModel
 import com.avisual.tasklistapp.model.Task
 import com.avisual.tasklistapp.repository.TaskRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
 
 class MainViewModel(private val taskRepository: TaskRepository) : ScopeViewModel() {
 
     val storedTask: Flow<List<Task>> get() = taskRepository.getAllTasks()
 
+    fun deleteTask(task:Task){
+        launch {
+            taskRepository.delete(task)
+        }
+    }
 }
 
 @Suppress("UNCHECKED_CAST")
