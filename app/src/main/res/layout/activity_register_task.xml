@@ -8,43 +8,78 @@
     android:padding="25dp"
     tools:context=".ui.registerTask.RegisterTaskActivity">
 
-    <TextView
-        android:id="@+id/et_title_form"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_weight="0"
-        android:text="Register new Task"
-        android:textAlignment="center"
-        android:textAppearance="@android:style/TextAppearance.Material.Display1"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_weight="0"
-        android:ems="10"
-        android:hint="Title of task"
-        android:inputType="textPersonName" />
+        <TextView
+            android:id="@+id/et_title_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="0"
+            android:text="Register new Task"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.Material.Display1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/et_description"
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="0"
+            android:ems="10"
+            android:hint="Title of task"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="0"
+            android:ems="10"
+            android:hint="Description task"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_weight="0"
-        android:ems="10"
-        android:hint="Description task"
-        android:inputType="textPersonName" />
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/sport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sport" />
+
+        <CheckBox
+            android:id="@+id/housework"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Housework" />
+
+        <CheckBox
+            android:id="@+id/study"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Study" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/button_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_weight="0"
         android:text="Save new task " />
 
