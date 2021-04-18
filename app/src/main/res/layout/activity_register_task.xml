@@ -53,26 +53,33 @@
         android:layout_weight="0"
         android:orientation="horizontal">
 
-        <CheckBox
-            android:id="@+id/sport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Sport" />
+            android:orientation="horizontal">
 
-        <CheckBox
-            android:id="@+id/housework"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Housework" />
+            <RadioButton
+                android:id="@+id/study"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Study" />
 
-        <CheckBox
-            android:id="@+id/study"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Study" />
+            <RadioButton
+                android:id="@+id/housework"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Housework" />
+
+            <RadioButton
+                android:id="@+id/sport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sport" />
+        </RadioGroup>
 
     </LinearLayout>
 
