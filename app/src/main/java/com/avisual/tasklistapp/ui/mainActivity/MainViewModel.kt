@@ -1,18 +1,19 @@
 package com.avisual.tasklistapp.ui.mainActivity
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
 import com.avisual.tasklistapp.common.ScopeViewModel
 import com.avisual.tasklistapp.model.Task
 import com.avisual.tasklistapp.repository.TaskRepository
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val taskRepository: TaskRepository) : ScopeViewModel() {
 
-    val storedTask: Flow<List<Task>> get() = taskRepository.getAllTasks()
+    val storedTask: LiveData<List<Task>> get() = taskRepository.getAllTasks().asLiveData()
 
-    fun deleteTask(task:Task){
+    fun deleteTask(task: Task) {
         launch {
             taskRepository.delete(task)
         }
