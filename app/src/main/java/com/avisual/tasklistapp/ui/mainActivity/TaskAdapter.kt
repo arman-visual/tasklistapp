@@ -40,7 +40,7 @@ class TaskAdapter(
                 "Sport" -> binding.imageTask.setImageResource(R.drawable.ic_sport)
                 "Housework" -> binding.imageTask.setImageResource(R.drawable.ic_housework)
                 "Study" -> binding.imageTask.setImageResource(R.drawable.ic_study)
-                else -> binding.imageTask.setImageResource(R.drawable.ic_launcher_background)
+                else -> binding.imageTask.setImageResource(R.drawable.ic_standard)
             }
             binding.btDelete
         }
