@@ -36,9 +36,19 @@ class RegisterTaskActivity : AppCompatActivity() {
     private fun saveTask() {
         val title = binding.etTitle.text.toString()
         val description = binding.etDescription.text.toString()
-        val task = Task(0, title, description)
+        val taskChoose = chooseOption()
+        val task = Task(0, title, description, taskChoose)
         viewModel.saveTask(task)
         finish()
+    }
+
+    private fun chooseOption(): String {
+        return when {
+            binding.sport.isChecked -> "Sport"
+            binding.study.isChecked -> "Study"
+            binding.housework.isChecked -> "Housework"
+            else -> "Empty"
+        }
     }
 
 }

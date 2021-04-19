@@ -6,13 +6,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.avisual.tasklistapp.R
 import com.avisual.tasklistapp.database.Db
 import com.avisual.tasklistapp.databinding.ActivityMainBinding
 import com.avisual.tasklistapp.model.Task
 import com.avisual.tasklistapp.repository.TaskRepository
 import com.avisual.tasklistapp.ui.registerTask.RegisterTaskActivity
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.collect
 
 class MainActivity : AppCompatActivity() {
