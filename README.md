@@ -1,6 +1,6 @@
 # TaskList Application :clipboard:
 
- ![space App logo](logo_banner.png)
+ ![space App logo](📋logo_banner.png)
 
 ## Libraries used in this project :books:
 
