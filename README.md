@@ -6,6 +6,7 @@
 
 - Android Jetpack (Navigation and safeArgs).
 - Room (persistence).
+- View Binding
 
 ## Best practice :white_check_mark:
 
